@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
+
 }
 
 android {
@@ -38,6 +41,8 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
+
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -66,4 +71,26 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //coroutines
+    implementation (libs.kotlinx.coroutines.core)
+    implementation (libs.kotlinx.coroutines.android)
+
+    //hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+
+//    //okhttp
+//    implementation (libs.okhttp)
+//    implementation (libs.logging.interceptor)
+
+//    //retorfit2
+//    implementation (libs.retrofit)
+//    implementation (libs.converter.gson)
+//    //viewModelScope
+//    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+
+//    // viewModels
+//    implementation (libs.androidx.activity.ktx)
+//    implementation (libs.androidx.fragment.ktx)
 }
