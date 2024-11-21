@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "My_Weather"
 include(":app")
- 
+include(":presentation")
+include(":data")
+include(":domain")
